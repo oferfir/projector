@@ -20,12 +20,22 @@
 		
 <button id="on">Turn me on!</button>
 <script type="text/javascript">
-var button = document.getElementById("on");
-button.onclick = function(){
+var onbutton = document.getElementById("on");
+var offbutton = document.getElementById("off");
+
+onbutton.onclick = function(){
   $($.ajax({url: 'https://projector-7d082.firebaseio.com/.json',
 				type: 'PUT',
 				contentType: "application/json",
 				data: JSON.stringify({"last_refreshed": $.now()}) }).
+			  then(response => { $('#message').text('success')}).
+	 		  catch(response=> {$('#message').text('failed... contact Ofer')}));
+}
+onbutton.offclick = function(){
+  $($.ajax({url: 'https://projector-7d082.firebaseio.com/.json',
+				type: 'PUT',
+				contentType: "application/json",
+				data: JSON.stringify({"last_refreshed": 0}) }).
 			  then(response => { $('#message').text('success')}).
 	 		  catch(response=> {$('#message').text('failed... contact Ofer')}));
 }
