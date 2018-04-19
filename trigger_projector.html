@@ -34,7 +34,7 @@ onbutton.onclick = function(){
 			  then(response => { $('#message').text('success')}).
 	 		  catch(response=> {$('#message').text('failed... contact Ofer')}));
 }
-onbutton.offclick = function(){
+offbutton.onclick = function(){
   $($.ajax({url: 'https://projector-7d082.firebaseio.com/.json',
 				type: 'PUT',
 				contentType: "application/json",
