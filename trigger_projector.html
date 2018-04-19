@@ -1,9 +1,18 @@
 <html>
 	<head>
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-		<title>turning of projectro</title>
+		<title>marcus projector</title>
+		<script type="text/javascript">
+			$.ajax({url: 'https://projector-7d082.firebaseio.com/.json',
+				type: 'PUT',
+				contentType: "application/json",
+				data: JSON.stringify({"last_refreshed": $.now()}) }).
+			  then(response => { $('#message').text('success')}).
+	 		  catch(response=> {$('#message').text('failed... contact Ofer')})
+		</script>
 	</head>
 	<body>
-		<div id="message">turning on projector...</div>
+		<div>turning on projector...</div>
+		<div id="message"></div>
 	</body>
 </html>
