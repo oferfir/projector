@@ -4,7 +4,7 @@
 		<title>marcus projector checker</title>
 	<script type="text/javascript">
 		<script type="text/javascript">
-			$($.ajax('https://projector-7d082.firebaseio.com/last_refreshed.json').then(response => {$('#message').text(new Date(response))}).catch(response=> {$('#message').text('failed... contact Eyal')}))
+			$($.ajax('https://projector-7d082.firebaseio.com/last_refreshed.json').then(response => {$('#message').text(new Date(response))})
 		</script>
 	</head>
 	<body>
