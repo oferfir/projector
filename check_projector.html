@@ -1,0 +1,15 @@
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<title>marcus projector</title>
+		<script type="text/javascript">
+			$($.ajax(url: 'https://projector-7d082.firebaseio.com/last_refreshed.json').
+			  then(response => { $('#message').text(response.data)}).
+	 		  catch(response=> {$('#message').text('failed... contact Ofer')}))
+		</script>
+	</head>
+	<body>
+		<div>last refreshed</div>
+		<div id="message"></div>
+	</body>
+</html>
