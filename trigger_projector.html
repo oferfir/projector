@@ -14,22 +14,22 @@
 		</script>
 	</head>
 	<body>
-		<h2>turning on projector...</h2>
+		<h1>The Markus ProjecTor</h1>
 		<h2 id="message"></h2>
 		
-<p id="on">Turn me on!</p>
+<h1 id="on">Click me to turn on!</h1>
 
 <script type="text/javascript">
-document.getElementById("demo").onclick = function() {myFunction()};
+document.getElementById("on").onclick = function() {myFunction()};
 function myFunction() {
-    document.getElementById("demo").innerHTML = "Turning on...`!";
+    document.getElementById("on").innerHTML = "Turning on...`!";
     $($.ajax({url: 'https://projector-7d082.firebaseio.com/.json',
 				type: 'PUT',
 				contentType: "application/json",
 				data: JSON.stringify({"last_refreshed": $.now()}) }).
 			  then(response => { $('#message').text('success')}).
 	 		  catch(response=> {$('#message').text('failed... contact Ofer')}));
-    document.getElementById("demo").innerHTML = "Thanks!";
+    document.getElementById("on").innerHTML = "Thanks!";
 }
 </script>
 		
