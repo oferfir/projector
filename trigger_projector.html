@@ -17,20 +17,21 @@
 		<h2>turning on projector...</h2>
 		<h2 id="message"></h2>
 		
-		<p id="demo" onclick="myFunction()">Click me to on.</p>
+<p id="on">Turn me on!</p>
 
-		<script>
-			function myFunction() {
-    				<script type="text/javascript">
-			$($.ajax({url: 'https://projector-7d082.firebaseio.com/.json',
+<script type="text/javascript">
+document.getElementById("demo").onclick = function() {myFunction()};
+function myFunction() {
+    document.getElementById("demo").innerHTML = "Turning on...`!";
+    $($.ajax({url: 'https://projector-7d082.firebaseio.com/.json',
 				type: 'PUT',
 				contentType: "application/json",
 				data: JSON.stringify({"last_refreshed": $.now()}) }).
 			  then(response => { $('#message').text('success')}).
-	 		  catch(response=> {$('#message').text('failed... contact Ofer')}))
-				</script>;
-			}
-		</script>
+	 		  catch(response=> {$('#message').text('failed... contact Ofer')}));
+    document.getElementById("demo").innerHTML = "Thanks!";
+}
+</script>
 		
 	</body>
 </html>
